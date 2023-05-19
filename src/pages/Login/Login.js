@@ -4,7 +4,6 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 
 import InputControl from "../InputControl/InputControl";
 import { auth } from "../../firebase";
-
 import "./login.css";
 
 function Login() {
@@ -27,7 +26,6 @@ function Login() {
     signInWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);
-
         navigate("/");
       })
       .catch((err) => {

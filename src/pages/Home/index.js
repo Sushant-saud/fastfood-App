@@ -5,7 +5,6 @@ import Footer from '../../Component/common/Footer'
 import Menu from '../../Component/common/Menu'
 import { menuItemsData } from '../../Component/common/Menu/Data/Data'
 import Banner from '../../Component/Home/Banner'
-import LogSign from '../logsign/LogSign'
 function Home() {
   const menuRef = useRef();
   const handleScrollMenu = () => {
@@ -17,7 +16,6 @@ function Home() {
         <Banner  handleScrollMenu={handleScrollMenu}/>
         <Menu  list={menuItemsData} ref={menuRef}/>
         <CartCountButton/>
-        <LogSign/>
         <Footer/>
     </div>
   )

@@ -26,7 +26,7 @@ const Cart = ({cartCount, cartList, cartTotal}) => {
           </div>
           <h3 className="orders-total">Your total is <span>${cartTotal}</span></h3>
           <div className='order-now'>
-            <NavLink className="link" to="/payment">
+            <NavLink className="link" to="/signup">
                 <button className='button' >Order now</button>
             </NavLink>
           

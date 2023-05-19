@@ -1,11 +1,10 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import InputControl from "../InputControl/InputControl";
-import { auth } from '../../firebase'
-import './signup.css';
+import { auth } from "../../firebase";
+import "./signup.css";
 function SignUp() {
- 
   const [data, setData] = useState(" ");
   const navigate = useNavigate();
   const [values, setValues] = useState({
@@ -15,11 +14,7 @@ function SignUp() {
   });
   const [errorMsg, setErrorMsg] = useState("");
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
-  useEffect(() => {
-    const user=auth.currentUser;
-    setData(localStorage.setItem('name', JSON.stringify(user)));
-  }, [auth.currentUser]);
-   
+
   const handleSubmission = () => {
     if (!values.name || !values.email || !values.pass) {
       setErrorMsg("Fill all fields");
@@ -35,15 +30,13 @@ function SignUp() {
         await updateProfile(user, {
           displayName: values.name,
         });
-        
+
         navigate("/login");
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);
         setErrorMsg(err.message);
       });
-     
-
   };
 
   return (
